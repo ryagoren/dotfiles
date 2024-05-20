@@ -137,13 +137,7 @@ vim.wo.foldenable=false
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {noremap=true, silent=true})
 
 -- colors for when in the mood
-require("rose-pine").setup {
-    transparent_background = true,
-    semantic_tokens = true,
-    highlight_overrides= {},
-    color_overrides = {},
-    styles = {},
-}
+require("gruvbox").setup({})
 
 require("monet").setup {
     transparent_background = true,
@@ -153,7 +147,7 @@ require("monet").setup {
     styles = {},
 }
 
-vim.cmd('colorscheme rose-pine') -- default
+vim.cmd('colorscheme gruvbox') -- default
 vim.keymap.set('n', "<leader>rp", ":colorscheme rose-pine<CR>")
 vim.keymap.set('n', "<leader>cmn", ":colorscheme monet<CR>")
 vim.keymap.set('n', "<leader>bl", ":set background=light<CR>")

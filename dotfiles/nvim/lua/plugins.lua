@@ -26,6 +26,7 @@ use 'tpope/vim-fugitive'
 -- colors
 use 'rose-pine/neovim'
 use 'fynnfluegge/monet.nvim'
+use "ellisonleao/gruvbox.nvim"
 
 -- all the lsp/autocomplete-related stuff
 use 'rust-lang/rust.vim'
