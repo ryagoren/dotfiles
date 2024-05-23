@@ -11,13 +11,9 @@ layout {
              cargo { args "test"; }
         }
     }
-    pane size=1 borderless=true {
-        plugin location="zellij:status-bar"
-    }
-
     pane_template name="cargo" {
-    command "cargo"
-    start_suspended true
-}
+        command "cargo"
+            start_suspended true
+    }
 
 }
