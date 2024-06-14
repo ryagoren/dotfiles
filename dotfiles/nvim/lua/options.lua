@@ -32,7 +32,6 @@ vim.opt.diffopt:append('indent-heuristic')
 vim.opt.listchars = 'tab:^ ,nbsp:¬,extends:»,precedes:«,trail:•'
 
 vim.keymap.set('n', '<leader>;', '<cmd>Buffers<cr>')
-
 vim.keymap.set('n', '<leader>z', ':set invlist<cr>')
 
 vim.keymap.set('n', 'n', 'nzz', { silent = true })

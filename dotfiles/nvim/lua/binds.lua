@@ -17,25 +17,20 @@ set('x', "<leader>p", [["_dP]])
 set("n", "<left>", "gT")
 set("n", "<right>", "gt")
 
-set("n", "<M-,>", "<c-w>5<")
-set("n", "<M-.>", "<c-w>5>")
-set("n", "<M-t>", "<C-W>+")
-set("n", "<M-s>", "<C-W>-")
+--set('n', "<leader>e", [[:edit <C-R>=expand("%:p:h") . "/"<CR>]], { noremap = true, silent = true })
+--set('n', "<leader>tabe", [[:edit <C-R>=expand("%:p:h") . "/"<CR>]], { noremap = true, silent = true })
+--set('n', '<leader>vs', [[:edit <C-R>=expand("%:p:h") . "/"<CR>]], { noremap = true, silent = true })
+--set('n', '<leader>split', [[:edit <C-R>=expand("%:p:h") . "/"<CR>]], { noremap = true, silent = true })
 
+
+set('n', "<leader>e", ":edit <C-R>=fnamemodify(@%, ':p:h')<CR>", { noremap = true, silent = true })
+--nnoremap <leader>e :edit <C-R>=fnamemodify(@%, ':p:h')<CR>/
+
+--changlist qols
+--set("n", "<M-,>", "<c-w>5<")
+--set("n", "<M-.>", "<c-w>5>")
+--set("n", "<M-t>", "<C-W>+")
+--set("n", "<M-s>", "<C-W>-")
+
+--set("n", "<leader><leader>x", "<cmd>source %<CR>")
 -- pasting
-set("n", "<leader><leader>x", "<cmd>source %<CR>")
-set("n", "<M-j>", function()
-  if vim.opt.diff:get() then
-    vim.cmd [[normal! ]c]]
-  else
-    vim.cmd [[m .+1<CR>==]]
-  end
-end)
-
-set("n", "<M-k>", function()
-  if vim.opt.diff:get() then
-    vim.cmd [[normal! [c]]
-  else
-    vim.cmd [[m .-2<CR>==]]
-  end
-end)
