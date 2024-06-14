@@ -23,3 +23,6 @@ require("lazy").setup({ import = "plugins" }, {
 
 require("binds")
 require("options")
+require("complete")
+require("auto")
+
