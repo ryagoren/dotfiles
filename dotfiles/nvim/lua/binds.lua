@@ -16,9 +16,12 @@ set("n", "<M-.>", "<c-w>5>")
 set("n", "<M-t>", "<C-W>+")
 set("n", "<M-s>", "<C-W>-")
 
+-- pasting
+set('n', '<leader>c', '"+y')
+set('n', '<leader>cc', '"+yy')
+
 set("n", "<leader><leader>x", "<cmd>source %<CR>")
 
---
 set("n", "<M-j>", function()
   if vim.opt.diff:get() then
     vim.cmd [[normal! ]c]]
