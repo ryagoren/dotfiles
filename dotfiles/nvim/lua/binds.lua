@@ -8,6 +8,12 @@ set('n', '<C-u>', '<C-u>zz')
 set('n', '<leader>q', 'q')
 set('n', 'q', '<Nop>')
 
+
+set('n', "<leader>b", ":set invrelativenumber<CR>")
+
+-- paste without adding selected to rm reg
+set('x', "<leader>p", [["_dP]])
+
 set("n", "<left>", "gT")
 set("n", "<right>", "gt")
 
@@ -17,11 +23,7 @@ set("n", "<M-t>", "<C-W>+")
 set("n", "<M-s>", "<C-W>-")
 
 -- pasting
-set('n', '<leader>c', '"+y')
-set('n', '<leader>cc', '"+yy')
-
 set("n", "<leader><leader>x", "<cmd>source %<CR>")
-
 set("n", "<M-j>", function()
   if vim.opt.diff:get() then
     vim.cmd [[normal! ]c]]
