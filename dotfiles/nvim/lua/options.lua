@@ -8,7 +8,6 @@ opt.splitbelow = true
 opt.splitright = true
 opt.signcolumn = "yes"
 opt.shada = { "'10", "<0", "s10", "h" }
-opt.clipboard = "unnamedplus"
 
 -- fuk folding. rly. 
 vim.opt.foldenable = false
@@ -18,7 +17,6 @@ vim.opt.foldlevelstart = 99
 vim.opt.wrap = false
 -- remove useless edit suggestions
 vim.opt.wildignore = '.hg,.svn,*~,*.png,*.jpg,*.gif,*.min.js,*.swp,*.o,vendor,dist,_site'
-
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true

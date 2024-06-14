@@ -2,6 +2,9 @@ vim.g.mapleader =','
 vim.g.maplocalleader = ','
 vim.opt.mouse=""
 
+require("binds")
+require("options")
+
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
   vim.fn.system {
@@ -21,8 +24,5 @@ require("lazy").setup({ import = "plugins" }, {
   },
 })
 
-require("binds")
-require("options")
 require("complete")
 require("auto")
-
