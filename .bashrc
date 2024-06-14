@@ -75,9 +75,19 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 export PATH=$PATH:~/local/bin:~/.cargo/bin
-export EDITOR='nvi'
+export EDITOR='nvim'
 export QMK_HOME=/home/ryangeor/git/qmk_parent/qmk
 
+
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+# Enable Git autocompletion
+if [[ ! -f ~/git-completion.bash ]]; then
+    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/git-completion.bash
+fi
+source ~/git-completion.bash
 
 #. "$HOME/.cargo/env"
 
