@@ -1,2 +1,3 @@
-mv /home/ryangeor/.config/$1 /home/ryangeor/git/myconfig/dotfiles/$1
-ln -s /home/ryangeor/git/myconfig/dotfiles/$1 /home/ryangeor/.config/$1
+#!/bin/bash
+mv $HOME.config/$1 $HOME/git/myconfig/dotfiles/$1
+ln -s $HOME/git/myconfig/dotfiles/$1 $HOME.config/$1

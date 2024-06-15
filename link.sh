@@ -1,1 +1,1 @@
-ln -s /home/ryangeor/git/myconfig/dotfiles/$1 /home/ryangeor/.config/$1
+ln -s $HOME/git/myconfig/dotfiles/$1 $HOME.config/$1
