@@ -4,6 +4,9 @@ opt.inccommand = "split"
 opt.smartcase = true
 opt.ignorecase = true
 
+opt.undofile = true
+
+
 opt.splitbelow = true
 opt.splitright = true
 --opt.signcolumn = "yes"
@@ -25,6 +28,7 @@ opt.vb = true
 opt.diffopt:append('iwhite')
 opt.diffopt:append('algorithm:histogram')
 opt.diffopt:append('indent-heuristic')
+opt.shortmess="A"
 
 opt.listchars = 'tab:^ ,nbsp:¬,extends:»,precedes:«,trail:•'
 

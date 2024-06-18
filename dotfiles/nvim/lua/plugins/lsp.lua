@@ -7,6 +7,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       { "j-hui/fidget.nvim", opts = {} },
+      {'mrcjkb/rustaceanvim', version='^4', lazy=false},
       "stevearc/conform.nvim",
     },
     config = function()
