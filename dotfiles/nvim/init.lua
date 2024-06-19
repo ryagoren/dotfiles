@@ -21,6 +21,5 @@ require("lazy").setup({ import = "plugins" }, {
   },
 })
 
-require("core.complete")
 require("core.binds")
 require("core.options")

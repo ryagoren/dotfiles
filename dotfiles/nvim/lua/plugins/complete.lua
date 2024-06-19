@@ -1,6 +1,8 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    commit = "b356f2c",
+    pin=true,
     lazy = false,
     priority = 100,
     dependencies = {
@@ -15,26 +17,34 @@ return {
 	local lspkind = require "lspkind"
 	lspkind.init {}
 	local cmp = require "cmp"
-
 	cmp.setup {
 	  sources = {
 	    { name = "nvim_lsp" },
-	    { name = "cody" },
 	    { name = "path" },
-	    { name = "buffer" },
+	    --{ name = "buffer" },
 	  },
+	  experimental = {
+		ghost_text=true, 
+	},
 	  mapping = {
-	    ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-	    ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-	    ["<C-y>"] = cmp.mapping(
+	    ["<Down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+	    ["<Up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+	    ["<CR>"] = cmp.mapping(
 	      cmp.mapping.confirm {
-		behavior = cmp.ConfirmBehavior.Insert,
-		select = true,
+		--behavior = cmp.ConfirmBehavior.Insert,
+		select = false,
 	      },
 	      { "i", "c" }
 	    ),
 	  },
 	}
+
+	cmp.setup.cmdline(':', {
+		sources = cmp.config.sources({
+			{ name = 'path' }
+		})
+	})
+
 
 	vim.diagnostic.config({
 	  virtual_text = true,
@@ -46,4 +56,17 @@ return {
 	})
     end,
   },
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		opts = {},
+		config = function(_, opts)
+			require "lsp_signature".setup({
+				doc_lines = 0,
+				handler_opts = {
+					border = "none"
+				},
+			})
+		end
+	},
 }
