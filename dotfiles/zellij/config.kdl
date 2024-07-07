@@ -256,6 +256,39 @@ themes {
  		white "#FBF1C7"
  		orange "#D65D0E"
  	}
+
+	retrowave{
+
+		fg  "#F8F8F8"
+		bg "#262336"
+		black  "#241B2F"
+		red  "#AF6DF9"
+		green  "#72F1B8"
+		yellow  "#FFCC00"
+		blue "#FE4450" 
+		magenta  "#FF7EDB"
+		cyan  "#61E2FF"
+		white  "#F8F8F8"
+	   orange  "#FF8B39"
+	}
+	fluoro {
+
+		   fg  "#8BA7A7"
+		   bg  "#2B2234"
+		   bgdark "#2B2234"
+		   blue "#3377ff" 
+		   blue "#57CBE6"
+		   cyan  "#61E2FF"
+		   green  "#72F1B8"
+		   orange  "#FF8B39"
+		   pink  "#FC199A"
+		   purple  "#AF6DF9"
+		   red  "#FE4450"
+		   yellow  "#FFCC00"
+		   white "#F8F8F8"
+		   magenta "#FF67D4"
+		   black "#495495"
+	}
 }
 
 // Define color themes for Zellij
@@ -281,7 +314,9 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
- theme "gruvbox-dark"
+
+ //theme "gruvbox-dark"
+theme "retrowave"
 
 // The name of the default layout to load on startup
 // Default: "default"
@@ -317,7 +352,7 @@ pane_frames false
 // that will be used by default if this option is not set.
 // Examples:
 //
-// copy_command "xclip -selection clipboard" // x11
+copy_command "xclip -selection clipboard" // x11
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 
