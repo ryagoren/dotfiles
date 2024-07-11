@@ -170,7 +170,7 @@ assign [class="discord"] $ws5
 assign [class="Thunderbird"] $ws5
 # == named
 # ===== work
-assign [class="Vmware-view"] $ws3
+#assign [class="Vmware-view"] $ws3
 #  ======= steam + games
 assign [class="steam"] $ws4
 for_window [class="^steam$" title="^Friends$"] floating enable
