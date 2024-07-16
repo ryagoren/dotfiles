@@ -24,7 +24,7 @@ return {
 	}
 
      require("mason").setup()
-      local ensure_installed = {}
+      local ensure_installed = {'clangd'}
       require("mason-tool-installer").setup { ensure_installed = ensure_installed }
 
       for name, config in pairs(servers) do
@@ -37,6 +37,8 @@ return {
 
         lspconfig[name].setup(config)
       end
+
+
 
       vim.api.nvim_create_autocmd('LspAttach', {
 	      desc='lspa', 
