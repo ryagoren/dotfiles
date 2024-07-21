@@ -9,6 +9,8 @@ return {
       { "j-hui/fidget.nvim", opts = {} },
       {'mrcjkb/rustaceanvim', version='^4', lazy=false},
       "stevearc/conform.nvim",
+      "b0o/SchemaStore.nvim",
+
     },
     config = function()
       require("neodev").setup {}
@@ -21,10 +23,42 @@ return {
 	local lspconfig = require "lspconfig"
 	local servers = {
 		bashls=true,
+		lua_ls=true,
+		jsonls = {
+		  settings = {
+		    json = {
+		      schemas = require("schemastore").json.schemas(),
+		      validate = { enable = true },
+		    },
+		  },
+		},
+		yamlls = {
+		  settings = {
+		    yaml = {
+		      schemaStore = {
+			enable = false,
+			url = "",
+		      },
+		      schemas = require("schemastore").yaml.schemas(),
+		    },
+		  },
+		},
+--		clangd = {
+--          		init_options = { clangdFileStatus = true },
+--			cmd = { "clangd", "--compile-commands-dir=." },
+--           		filetypes = { "c" },
+--        	},
+
 	}
 
      require("mason").setup()
-      local ensure_installed = {'clangd'}
+
+      local ensure_installed = {
+        "stylua",
+        "lua_ls",
+        "delve",
+      }
+
       require("mason-tool-installer").setup { ensure_installed = ensure_installed }
 
       for name, config in pairs(servers) do
@@ -37,7 +71,6 @@ return {
 
         lspconfig[name].setup(config)
       end
-
 
 
       vim.api.nvim_create_autocmd('LspAttach', {
