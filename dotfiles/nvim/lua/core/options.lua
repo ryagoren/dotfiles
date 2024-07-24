@@ -16,7 +16,7 @@ opt.foldenable = false
 opt.foldmethod = 'manual'
 opt.foldlevelstart = 99
 
-opt.wrap = false
+--opt.wrap = false
 -- remove useless edit suggestions
 
 opt.wildmode = 'list:longest'
