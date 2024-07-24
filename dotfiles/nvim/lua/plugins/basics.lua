@@ -12,5 +12,6 @@ return {
 		},
 		--"tpope/vim-surround",
 		"tpope/vim-fugitive",
+		{ "benlubas/wrapping-paper.nvim" },
 	}
 }

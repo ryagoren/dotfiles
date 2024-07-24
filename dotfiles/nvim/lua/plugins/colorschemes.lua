@@ -1,4 +1,4 @@
-ureturn {
+return {
 	{
 		"ellisonleao/gruvbox.nvim",
 		config=function() 
