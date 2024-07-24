@@ -1,4 +1,4 @@
-return {
+ureturn {
 	{
 		"ellisonleao/gruvbox.nvim",
 		config=function() 
@@ -51,11 +51,27 @@ return {
 	},
 	{
 		'ab-dx/ares.nvim',
-		opts={},
+		config=function() 
+			vim.keymap.set('n', '<leader>baa', ':colorscheme ares<CR>')
+		end
 	},
 	{
 		'shaunsingh/moonlight.nvim',
-		opts={},
+		config=function()
+			vim.keymap.set('n', '<leader>bmn', ':colorscheme moonlight<CR>')
+		end
+	},
+	{
+		'Love-Pengy/lillilac.nvim',
+		config=function()
+			vim.keymap.set('n', '<leader>bll', ':colorscheme lillilac<CR>')
+		end
+	},
+	{
+		'nvimdev/oceanic-material',
+		config=function()
+			vim.keymap.set('n', '<leader>boc', ':colorscheme oceanic-material<CR>')
+		end
 	}
 }
 
