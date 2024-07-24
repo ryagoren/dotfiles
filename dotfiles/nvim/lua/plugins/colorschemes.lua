@@ -48,7 +48,14 @@ return {
 		config=function() 
 			vim.keymap.set('n', '<leader>bm', ':colorscheme goldle<CR>')
 		end
+	},
+	{
+		'ab-dx/ares.nvim',
+		opts={},
+	},
+	{
+		'shaunsingh/moonlight.nvim',
+		opts={},
 	}
-
 }
 
