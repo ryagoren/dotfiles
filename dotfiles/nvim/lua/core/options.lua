@@ -11,7 +11,7 @@ opt.splitright = true
 --opt.signcolumn = "yes"
 opt.shada = { "'10", "<0", "s10", "h" }
 
--- fuk folding. rly. 
+-- fuk folding. rly.
 opt.foldenable = false
 opt.foldmethod = 'manual'
 opt.foldlevelstart = 99
@@ -29,13 +29,11 @@ opt.vb = true
 opt.diffopt:append('iwhite')
 opt.diffopt:append('algorithm:histogram')
 opt.diffopt:append('indent-heuristic')
-opt.shortmess=""
+opt.shortmess = "A"
 
 opt.listchars = 'tab:^ ,nbsp:¬,extends:»,precedes:«,trail:•'
 
 if vim.fn.executable("rg") then
-  opt.grepprg = "rg --vimgrep --no-heading --smart-case"
-  opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+	opt.grepprg = "rg --vimgrep --no-heading --smart-case"
+	opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 end
-
-

@@ -35,5 +35,6 @@
   "synthweave.nvim": { "branch": "master", "commit": "50cb17af14dbdf8a2af634c40b9b20298f67aba0" },
   "vim-fugitive": { "branch": "master", "commit": "64d6cafb9dcbacce18c26d7daf617ebb96b273f3" },
   "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" },
-  "wrapping-paper.nvim": { "branch": "main", "commit": "56fa4f3757a29aab7c8ff60a53ae12ed591e4c52" }
+  "wrapping-paper.nvim": { "branch": "main", "commit": "56fa4f3757a29aab7c8ff60a53ae12ed591e4c52" },
+  "yuyuko.vim": { "branch": "master", "commit": "8ff073aa738aa9227169e776bb94f2b6be4499ca" }
 }

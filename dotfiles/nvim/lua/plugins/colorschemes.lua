@@ -86,5 +86,8 @@ return {
 			vim.cmd(":colorscheme candyland")
 		end
 	},
+	{
+		'Enonya/yuyuko.vim'
+	},
 }
 
