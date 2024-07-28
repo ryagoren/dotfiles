@@ -61,7 +61,7 @@ bindsym $mod+Return exec kitty
 bindsym Mod1+Shift+n exec --no-startup-id nm-applet
 
 ## autostart apps on login
-exec picom
+#exec picom
 exec nm-applet
 
 exec_always --no-startup-id ~/.config/polybar/i3_bar.sh
