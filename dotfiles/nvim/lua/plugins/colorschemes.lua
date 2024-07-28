@@ -24,7 +24,6 @@ return {
 				theme='fluoromachine',
 				-- theme='retrowave',
 			}
-			vim.cmd("colorscheme fluoromachine")
 			vim.keymap.set('n', '<leader>bf', ':colorscheme fluoromachine<CR>')
 		end
 	},
@@ -72,6 +71,20 @@ return {
 		config=function()
 			vim.keymap.set('n', '<leader>boc', ':colorscheme oceanic-material<CR>')
 		end
-	}
+	}, 
+	{
+		'AlessandroYorba/Alduin'
+	},
+	{
+		'ianfabs/sex.vim'
+	},
+	{
+		'AmberLehmann/candyland.nvim',
+		lazy=false,
+		priority=1000,
+		config=function()
+			vim.cmd(":colorscheme candyland")
+		end
+	},
 }
 
