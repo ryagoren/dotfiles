@@ -138,7 +138,7 @@ keybinds {
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
-        bind "Alt n" { NewPane; }
+        bind "Alt n" { NewPane "Right"; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt j" "Alt Down" { MoveFocus "Down"; }
@@ -267,7 +267,6 @@ themes {
  	}
 
 	retrowave{
-
 		fg  "#F8F8F8"
 		bg "#262336"
 		black  "#241B2F"
@@ -281,7 +280,6 @@ themes {
 	   orange  "#FF8B39"
 	}
 	fluoro {
-
 		   fg  "#8BA7A7"
 		   bg  "#2B2234"
 		   bgdark "#2B2234"
@@ -297,6 +295,22 @@ themes {
 		   white "#F8F8F8"
 		   magenta "#FF67D4"
 		   black "#495495"
+	}
+	candyland {
+		   fg  "#16161E"
+		   bg  "#251A34"
+		   bgdark "#2B2234"
+		   blue "#251A34" 
+		   cyan  242 205 209
+		   green  242 205 205
+		   orange  "#FF8B39"
+		   pink  "#FC199A"
+		   purple  "#AF6DF9"
+		   red  "#FE4450"
+		   yellow  "#FFCC00"
+		   white "#F8F8F8"
+		   magenta "#FF67D4"
+		black  "#241B2F"
 	}
 }
 
@@ -325,7 +339,7 @@ themes {
 //
 
  //theme "gruvbox-dark"
-theme "retrowave"
+theme "candyland"
 
 // The name of the default layout to load on startup
 // Default: "default"
@@ -361,7 +375,7 @@ pane_frames false
 // that will be used by default if this option is not set.
 // Examples:
 //
-copy_command "xclip -selection clipboard" // x11
+//copy_command "xclip -selection clipboard" // x11
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 
