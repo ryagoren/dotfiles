@@ -5,7 +5,26 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+
+cyan='\[\e[38;2;133;233;248m\]'
+blue='\[\e[38;2;110;162;247m\]'
+tan='\[\e[38;2;242;225;209m\]'
+spk='\[\e[1m\e[38;2;255;154;239m\]'
+lpk='\[\e[1m\e[38;2;255;207;232m\]'
+white='\[\e[0m\]'
+neut='\[\e[1m\e[38;2;192;202;245m\]'
+
+
+# cerulean = "0492C2"
+
+# fdf96
+# fdfdaf also nice
+bpy='\[\e[1m\e[38;2;253;253;150m\]'
+py='\[\e[38;2;253;253;150m\]'
+
+# yeah nicer
+pys='\[\e[1m\e[38;2;253;253;175m\]'
+
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -20,6 +39,7 @@ HISTFILESIZE=2000
 
 alias nvi="nvim"
 alias iconfig="nvim ~/.config/i3/config"
+alias xcsc="xclip -selection clipboard"
 alias polyconfig="nvim ~/.config/polybar/config.ini"
 alias piconfig="nvim ~/.config/picom/picom.conf"
 alias alconfig="nvim ~/.config/alacritty/alacritty.toml"
@@ -33,20 +53,15 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-
 function parse_git_dirty {
   [[ $(git status --porcelain 2> /dev/null) ]] && echo "*"
 }
+
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$(parse_git_dirty))/"
 }
 
-export PS1="┌─[\[\e[01;32m\]\u\[\e[00m\]@\[\e[01;32m\]\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[0m\]]\[\e[31m\]\$(parse_git_branch)\[\e[0m\]\n└─╼ "
+export PS1="┌─[$lpk\u$neut@$lpk\h$neut:$tan\w$neut]$pys\$(parse_git_branch)$neut\n└─╼ "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
