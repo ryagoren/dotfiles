@@ -1,0 +1,3 @@
+[submodule "boretils/cpy"]
+	path = boretils/cpy
+	url = https://github.com/ryagoren/cpy.git
