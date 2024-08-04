@@ -67,9 +67,9 @@ export PS1="┌─[$lpk\u$neut@$lpk\h$neut:$tan\w$neut]$pty\$(parse_git_branch)$
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias grep='grep --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls -alF --color=auto'
+alias la='ls -A --color=auto'
+alias l='ls -CF --color=auto'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
