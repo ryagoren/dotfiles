@@ -5,7 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
 cyan='\[\e[38;2;133;233;248m\]'
 blue='\[\e[38;2;110;162;247m\]'
 tan='\[\e[38;2;242;225;209m\]'
@@ -13,18 +12,17 @@ spk='\[\e[1m\e[38;2;255;154;239m\]'
 lpk='\[\e[1m\e[38;2;255;207;232m\]'
 white='\[\e[0m\]'
 neut='\[\e[1m\e[38;2;192;202;245m\]'
-
-
 # cerulean = "0492C2"
-
+## yellows
 # fdf96
 # fdfdaf also nice
+# ff8994
 bpy='\[\e[1m\e[38;2;253;253;150m\]'
 py='\[\e[38;2;253;253;150m\]'
-
-# yeah nicer
 pys='\[\e[1m\e[38;2;253;253;175m\]'
+pty='\[\e[38;2;242;240;161m\]'
 
+[[ -e "$HOME/.dircolors" ]] && eval "$(dircolors "$HOME/.dircolors")"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -61,21 +59,14 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$(parse_git_dirty))/"
 }
 
-export PS1="┌─[$lpk\u$neut@$lpk\h$neut:$tan\w$neut]$pys\$(parse_git_branch)$neut\n└─╼ "
+export PS1="┌─[$lpk\u$neut@$lpk\h$neut:$tan\w$neut]$pty\$(parse_git_branch)$neut\n└─╼ "
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
 # some more ls aliases
+
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias grep='grep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
