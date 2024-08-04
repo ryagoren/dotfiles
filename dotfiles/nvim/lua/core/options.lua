@@ -31,9 +31,9 @@ opt.diffopt:append('algorithm:histogram')
 opt.diffopt:append('indent-heuristic')
 opt.shortmess = "A"
 
-opt.listchars = 'tab:^ ,nbsp:¬,extends:»,precedes:«,trail:•'
+-- opt.listchars = 'tab:^ ,nbsp:¬,extends:»,precedes:«,trail:•'
 
 if vim.fn.executable("rg") then
-	opt.grepprg = "rg --vimgrep --no-heading --smart-case"
-	opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+    opt.grepprg = "rg --vimgrep --no-heading --smart-case"
+    opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 end
