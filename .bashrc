@@ -11,7 +11,7 @@ tan='\[\e[38;2;242;225;209m\]'
 spk='\[\e[1m\e[38;2;255;154;239m\]'
 lpk='\[\e[1m\e[38;2;255;207;232m\]'
 white='\[\e[0m\]'
-neut='\[\e[1m\e[38;2;192;202;245m\]'
+neut='\[\e[38;2;230;230;250m\]'
 # cerulean = "0492C2"
 ## yellows
 # fdf96
@@ -20,7 +20,24 @@ neut='\[\e[1m\e[38;2;192;202;245m\]'
 bpy='\[\e[1m\e[38;2;253;253;150m\]'
 py='\[\e[38;2;253;253;150m\]'
 pys='\[\e[1m\e[38;2;253;253;175m\]'
-pty='\[\e[38;2;242;240;161m\]'
+pantone='\[\e[38;2;242;240;161m\]'
+paleyel='\[\e[38;2;245;245;220m\]'
+chifyel='\[\e[38;2;255;250;205m\]'
+pty='\[\e[38;2;251;236;193m\]'
+
+# light lav
+lv='\[\e[38;2;230;230;250m\]'
+vlv='\[\e[38;2;180;160;255m\]' # good 
+elv='\[\e[38;2;191;119;246m\]' 
+rlv='\[\e[38;2;177;102;255m\]'
+nlv='\[\e[38;2;177;102;255m\]'
+
+
+
+
+pc='\[\e[38;2;240;128;128m\]'
+pgr='\[\e[38;2;135;206;235m\]'
+pdb='\[\e[38;2;176;224;230m\]'
 
 [[ -e "$HOME/.dircolors" ]] && eval "$(dircolors "$HOME/.dircolors")"
 
@@ -59,7 +76,7 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$(parse_git_dirty))/"
 }
 
-export PS1="┌─[$lpk\u$neut@$lpk\h$neut:$tan\w$neut]$pty\$(parse_git_branch)$neut\n└─╼ "
+export PS1="┌─[$vlv\u$neut@$vlv\h$neut:$lpk\w$neut]$pty\$(parse_git_branch)$neut\n└─╼ "
 
 # enable color support of ls and also add handy aliases
 # some more ls aliases
@@ -67,7 +84,7 @@ export PS1="┌─[$lpk\u$neut@$lpk\h$neut:$tan\w$neut]$pty\$(parse_git_branch)$
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias grep='grep --color=auto'
-alias ll='ls -alF --color=auto'
+alias ll='ls -lit --color=auto'
 alias la='ls -A --color=auto'
 alias l='ls -CF --color=auto'
 

@@ -1,7 +1,7 @@
 themes:
   custom-theme:
-    fg: "#c0caf5"
-    bg: "#251a34"
+    fg: "#e8dcc0"
+    bg: "#251ac4"
     black: "#000000"
     red: "#db4b4b"
     green: "#9ece6a"

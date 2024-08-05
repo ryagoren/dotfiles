@@ -7,9 +7,9 @@
 # The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
 # slackware version of dircolors) are recognized but ignored.
 # Global config options can be specified before TERM or COLORTERM entries
-# ===================================================================
+#  ==================================================================
 # Terminal filters
-# ===================================================================
+#  ==================================================================
 # Below are TERM or COLORTERM entries, which can be glob patterns, which
 # restrict following config to systems with matching environment variables.
 COLORTERM ?*
@@ -60,8 +60,10 @@ EXEC 01;38;2;158;206;106 # Bold Green for executables (#9ECE6A)
 .lua 00;38;2;125;207;255 # Light Blue for Lua scripts (#7DCFFF)
 
 # Note files
-.txt 00;38;2;169;177;214 # Light Gray for text files (#A9B1D6)
-.md 00;38;2;169;177;214 # Light Gray for markdown files (#A9B1D6)
+# .txt 00;38;2;169;177;214 # Light Gray for text files (#A9B1D6)
+.txt 00;38;2;165;105;255
+.md 00;38;2;165;105;255
+#.md 00;38;2;169;177;214 # Light Gray for markdown files (#A9B1D6)
 
 # Compressed files
 .tar 01;38;2;219;75;75 # Bold Red for tar archives (#DB4B4B)
@@ -81,28 +83,28 @@ RESET 0 # reset to "normal" color
 #DIR 00;38;02;255;137;09
 #LINK 00;38;02;133;233;248 # directory
 
-# numerical value, the color is as for the file pointed to.)
-MULTIHARDLINK 00 # regular file with more than one link
-FIFO 40;33 # pipe
-SOCK 01;35 # socket
-DOOR 01;35 # door
-BLK 40;33;01 # block device driver
-CHR 40;33;01 # character device driver
-ORPHAN 40;31;01 # symlink to nonexistent file, or non-stat'able file ...
-MISSING 00 # ... and the files they point to
-SETUID 37;41 # file that is setuid (u+s)
-SETGID 30;43 # file that is setgid (g+s)
-CAPABILITY 00 # file with capability (very expensive to lookup)
-STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE 34;42 # dir that is other-writable (o+w) and not sticky
-STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
+
+MULTIHARDLINK 00;38;2;232;220;192 # regular file with more than one link (Soft Wheat)
+FIFO 01;38;2;255;232;120 # pipe (Soft Pastel Yellow)
+SOCK 01;38;2;165;105;255 # socket (Vivid Lavender)
+DOOR 01;38;2;165;105;255 # door (Vivid Lavender)
+BLK 01;38;2;255;232;120 # block device driver (Soft Pastel Yellow)
+CHR 01;38;2;255;232;120 # character device driver (Soft Pastel Yellow)
+ORPHAN 01;38;2;255;207;232 # symlink to nonexistent file (Soft Pink)
+MISSING 00;38;2;255;207;232 # ... and the files they point to (Soft Pink)
+SETUID 01;38;2;255;207;232 # file that is setuid (u+s) (Soft Pink)
+SETGID 01;38;2;255;232;120 # file that is setgid (g+s) (Soft Pastel Yellow)
+CAPABILITY 00;38;2;165;105;255 # file with capability (Vivid Lavender)
+STICKY_OTHER_WRITABLE 01;38;2;255;232;120 # dir that is sticky and other-writable (Soft Pastel Yellow)
+OTHER_WRITABLE 01;38;2;255;232;120 # dir that is other-writable and not sticky (Soft Pastel Yellow)
+STICKY 01;38;2;165;105;255 # dir with the sticky bit set and not other-writable (Vivid Lavender)
 
 # This is for files with execute permission:
 #EXEC 00;38;02;255;154;239
 
-# ===================================================================
+#  ==================================================================
 # File extension attributes
-# ===================================================================
+#  ==================================================================
 # List any file extensions like '.gz' or '.tar' that you would like ls
 # to color below. Put the suffix, a space, and the color init string.
 # (and any comments you want to add after a '#').
@@ -283,6 +285,4 @@ STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
 .ucf-dist 00;90
 .ucf-new 00;90
 .ucf-old 00;90
-#
-# Subsequent TERM or COLORTERM entries, can be used to add / override
-# config specific to those matching environment variables.
+

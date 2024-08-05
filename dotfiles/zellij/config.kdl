@@ -209,7 +209,8 @@ default_shell "bash"
 
 themes {
     candy {
-        fg 192 202 245 // #c0caf5
+        // fg 192 202 245 // #c0caf5
+        fg 230 217 184
         bg 37 26 52 // #251a34
         black 0 0 0 // #000000
         red 219 75 75 // #db4b4b
