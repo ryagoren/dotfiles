@@ -209,83 +209,23 @@ default_shell "bash"
 // scrollback_lines_to_serialize 10000
 
 themes {
- //	gruvbox-light {
- //		fg 60 56 54
- //       bg 251 82 75
- //       black 40 40 40
- //       red 205 75 69
- //       green 152 151 26
- //       yellow 215 153 33
- //       blue 69 133 136
- //       magenta 177 98 134
- //       cyan 104 157 106
- //       white 213 196 161
- //       orange 214 93 14
- //	}
- 	gruvbox-dark {
- 		fg "#D5C4A1"
- 		bg "#282828"
- 		black "#3C3836"
- 		red "#CC241D"
- 		green "#98971A"
- 		yellow "#D79921"
- 		blue "#3C8588"
- 		magenta "#B16286"
- 		cyan "#689D6A"
- 		white "#FBF1C7"
- 		orange "#D65D0E"
- 	}
-
-	retrowave{
-		fg  "#F8F8F8"
-		bg "#262336"
-		black  "#241B2F"
-		red  "#AF6DF9"
-		green  "#72F1B8"
-		yellow  "#FFCC00"
-		blue "#FE4450" 
-		magenta  "#FF7EDB"
-		cyan  "#61E2FF"
-		white  "#F8F8F8"
-	   orange  "#FF8B39"
-	}
-	fluoro {
-		   fg  "#8BA7A7"
-		   bg  "#2B2234"
-		   bgdark "#2B2234"
-		   blue "#3377ff" 
-		   blue "#57CBE6"
-		   cyan  "#61E2FF"
-		   green  "#72F1B8"
-		   orange  "#FF8B39"
-		   pink  "#FC199A"
-		   purple  "#AF6DF9"
-		   red  "#FE4450"
-		   yellow  "#FFCC00"
-		   white "#F8F8F8"
-		   magenta "#FF67D4"
-		   black "#495495"
-	}
-	candyland {
-		   fg 192 202 45
-		   bg  "#251A34"
-		   bgdark "#2B2234"
-		   blue "#251A34" 
-		   cyan  242 205 209
-		   green  242 205 205
-		   orange  "#FF8B39"
-		   pink  "#FC199A"
-		   purple  "#FC199A"
-		   red  "#FE4450"
-		   yellow  "#FFCC00"
-		   white "#F8F8F8"
-		   magenta "#FF67D4"
-		   black  "#241B2F"
-	}
+    candy {
+        fg 192 202 245 // #c0caf5
+        bg 37 26 52 // #251a34
+        black 0 0 0 // #000000
+        red 219 75 75 // #db4b4b
+        green 255 207 232 // #ffcfe8 ( used for floating border and tab selection)
+        yellow 224 175 104 // #e0af68
+        blue 122 162 247 // #7aa2f7
+        magenta 187 154 247 // #bb9af7
+        cyan 125 207 255 // #7dcfff
+        white 169 177 214 // #a9b1d6
+        orange 255 158 100 // #ff9e64
+    }
 }
 
 
-theme "candyland"
+theme "candy"
 mouse_mode false
 pane_frames false
 scroll_buffer_size 20000

@@ -43,12 +43,43 @@ TERM xterm*
 # deep/base blue: 00;38;02;110;162;247 
 # cyan: 00;38;02;255;137;09
 
+
+
+DIR 01;38;2;122;162;247 # Bold Blue for directories (#7AA2F7)
+LINK 01;38;2;125;207;255 # Bold Light Blue for symlinks (#7DCFFF)
+EXEC 01;38;2;158;206;106 # Bold Green for executables (#9ECE6A)
+
+# Compilable source files
+.c 00;38;2;122;162;247 # Blue for C files (#7AA2F7)
+.cpp 00;38;2;122;162;247 # Blue for C++ files (#7AA2F7)
+.rs 00;38;2;255;158;100 # Orange for Rust files (#FF9E64)
+
+# Script files
+.sh 00;38;2;115;218;202 # Light Green for shell scripts (#73DACA)
+.pl 00;38;2;187;154;247 # Purple for Perl scripts (#BB9AF7)
+.lua 00;38;2;125;207;255 # Light Blue for Lua scripts (#7DCFFF)
+
+# Note files
+.txt 00;38;2;169;177;214 # Light Gray for text files (#A9B1D6)
+.md 00;38;2;169;177;214 # Light Gray for markdown files (#A9B1D6)
+
+# Compressed files
+.tar 01;38;2;219;75;75 # Bold Red for tar archives (#DB4B4B)
+.tgz 01;38;2;219;75;75 # Bold Red for tgz archives (#DB4B4B)
+.zip 01;38;2;219;75;75 # Bold Red for zip archives (#DB4B4B)
+.gz 01;38;2;219;75;75 # Bold Red for gzip archives (#DB4B4B)
+.bz2 01;38;2;219;75;75 # Bold Red for bzip archives (#DB4B4B)
+.xz 01;38;2;219;75;75 # Bold Red for xz archives (#DB4B4B)
+
+
+
+
 #NORMAL 00 # no color code at all
 #FILE 00 # regular file: use no color at all
 
 RESET 0 # reset to "normal" color
-DIR 00;38;02;255;137;09
-LINK 00;38;02;133;233;248 # directory
+#DIR 00;38;02;255;137;09
+#LINK 00;38;02;133;233;248 # directory
 
 # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
@@ -67,7 +98,7 @@ OTHER_WRITABLE 34;42 # dir that is other-writable (o+w) and not sticky
 STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
 
 # This is for files with execute permission:
-EXEC 00;38;02;255;154;239
+#EXEC 00;38;02;255;154;239
 
 # ===================================================================
 # File extension attributes
@@ -94,17 +125,17 @@ EXEC 00;38;02;255;154;239
 # wow i really like this orange
 
 # 00;38;02;255;137;09
-.rs 00;38;02;255;137;09
-.c 00;38;02;110;162;247
-.cc 00;38;02;110;162;247
-.cpp 00;38;02;110;162;247
-.h 00;38;02;110;162;247
-.hh 00;38;02;110;162;247
-.hpp 00;38;02;110;162;247
-
-# notes
-.txt 00;38;02;161;235;89
-.md 00;38;02;161;235;89
+#.rs 00;38;02;255;137;09
+#.c 00;38;02;110;162;247
+#.cc 00;38;02;110;162;247
+#.cpp 00;38;02;110;162;247
+#.h 00;38;02;110;162;247
+#.hh 00;38;02;110;162;247
+#.hpp 00;38;02;110;162;247
+#
+## notes
+#.txt 00;38;02;161;235;89
+#.md 00;38;02;161;235;89
 
 # rest
 .7z 00;38;02;255;137;148
