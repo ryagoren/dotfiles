@@ -1,0 +1,23 @@
+{
+    "name": "CustomTheme",
+    "background": "#251A34",
+    "foreground": "#C0CAF5",
+    "black": "#000000",
+    "red": "#DB4B4B",
+    "green": "#9ECE6A",
+    "yellow": "#E0AF68",
+    "blue": "#7AA2F7",
+    "purple": "#BB9AF7",
+    "cyan": "#7DCFFF",
+    "white": "#A9B1D6",
+    "brightBlack": "#565F89",
+    "brightRed": "#F7768E",
+    "brightGreen": "#73DACA",
+    "brightYellow": "#E0AF68",
+    "brightBlue": "#7AA2F7",
+    "brightPurple": "#BB9AF7",
+    "brightCyan": "#7DCFFF",
+    "brightWhite": "#C0CAF5",
+    "selectionBackground": "#2D59A1",
+    "cursorColor": "#C0CAF5"
+}

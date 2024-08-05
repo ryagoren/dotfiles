@@ -1,0 +1,26 @@
+[color]
+  ui = auto
+
+[color "branch"]
+  current = 114 # bright green
+  local = 180 # yellow
+  remote = 39 # blue
+
+[color "diff"]
+  meta = 39 # blue
+  frag = 141 # purple
+  old = 203 # red
+  new = 114 # bright green
+  whitespace = 203 reverse # red (reverse)
+
+[color "status"]
+  added = 114 # bright green
+  changed = 180 # yellow
+  untracked = 203 # red
+
+[color "decorate"]
+  branch = 39 # blue
+  remoteBranch = 39 # blue
+  tag = 180 # yellow
+  stash = 141 # purple
+  HEAD = 114 # bright green
