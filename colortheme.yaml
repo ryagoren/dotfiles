@@ -1,0 +1,22 @@
+themes:
+  custom-theme:
+    fg: "#c0caf5"
+    bg: "#251a34"
+    black: "#000000"
+    red: "#db4b4b"
+    green: "#9ece6a"
+    yellow: "#e0af68"
+    blue: "#7aa2f7"
+    magenta: "#bb9af7"
+    cyan: "#7dcfff"
+    white: "#a9b1d6"
+    orange: "#ff9e64"
+    selection:
+      fg: "#251a34"
+      bg: "#2d59a1"
+    tab_active:
+      fg: "#000000"
+      bg: "#7aa2f7"
+    tab_inactive:
+      fg: "#737aa2"
+      bg: "#16161e"
