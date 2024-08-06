@@ -20,3 +20,7 @@ themes:
     tab_inactive:
       fg: "#737aa2"
       bg: "#16161e"
+
+
+      # better for kitty
+      Linen: #FAF0E6

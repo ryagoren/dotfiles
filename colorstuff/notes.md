@@ -7,3 +7,8 @@ Vibrant Lavender options (path):
 5. Neon Lavender: #B166FF
 
 Background: #251A34
+
+
+kitty quite saturated ; lighter shades work better, 
+
+so linen: Linen: #FAF0E6 rather hten the wheat
