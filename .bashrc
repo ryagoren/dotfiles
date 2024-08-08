@@ -38,9 +38,23 @@ pc='\[\e[38;2;240;128;128m\]'
 pgr='\[\e[38;2;135;206;235m\]'
 pdb='\[\e[38;2;176;224;230m\]'
 
-cool='\[\e[38;2;115;218;202\]'
+cool='\[\e[1m\e[38;2;158;206;106\]'
 
 [[ -e "$HOME/.dircolors" ]] && eval "$(dircolors "$HOME/.dircolors")"
+
+function parse_git_dirty {
+  [[ $(git status --porcelain 2> /dev/null) ]] && echo "*"
+}
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$(parse_git_dirty))/"
+}
+
+nontext="$lv"
+hostuser="$lpk"
+ppath="$pty"
+gbranch="$vlv"
+export PS1="$nontext┌─[$hostuser\u$nontext@$hostuser\h$nontext:$ppath\w$nontext]$gbranch\$(parse_git_branch)$nontext \n└─╼ $white"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -69,19 +83,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-function parse_git_dirty {
-  [[ $(git status --porcelain 2> /dev/null) ]] && echo "*"
-}
-
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$(parse_git_dirty))/"
-}
-
-nontext="$lv"
-hostuser="$lpk"
-ppath="$neut"
-gbranch="$pty"
-export PS1="$nontext┌─[$hostuser\u$nontext@$hostuser\h$nontext:$ppath\w$nontext]$gbranch\$(parse_git_branch)$nontext \n└─╼ $white"
 # enable color support of ls and also add handy aliases
 # some more ls aliases
 

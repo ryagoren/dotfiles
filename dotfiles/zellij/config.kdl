@@ -133,6 +133,8 @@ keybinds {
         unbind "Ctrl g"
         unbind "Ctrl G"
         unbind "Ctrl q"
+        unbind "Ctrl h"
+        unbind "Ctrl H"
         bind "Alt n" { NewPane "Right"; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
