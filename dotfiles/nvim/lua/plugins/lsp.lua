@@ -136,7 +136,11 @@ return {
 
             setup_cmake_compile_commands()
 
-            require("conform").setup {}
+            require("conform").setup({
+                formatters_by_ft = {
+                    cpp = {},
+                }
+            })
             vim.api.nvim_create_autocmd("BufWritePre", {
                 callback = function(args)
                     require("conform").format {

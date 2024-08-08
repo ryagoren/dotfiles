@@ -40,7 +40,7 @@ pdb='\[\e[38;2;176;224;230m\]'
 
 cool='\[\e[1m\e[38;2;158;206;106\]'
 
-[[ -e "$HOME/.dircolors" ]] && eval "$(dircolors "$HOME/.dircolors")"
+[[ -e "$HOME/.dircolors" ]] && eval "$(dircolors -b "$HOME/.dircolors")"
 
 function parse_git_dirty {
   [[ $(git status --porcelain 2> /dev/null) ]] && echo "*"
