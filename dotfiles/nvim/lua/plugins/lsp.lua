@@ -55,14 +55,6 @@ return {
 
             require("mason").setup()
 
-            local ensure_installed = {
-                "stylua",
-                "lua_ls",
-                "delve",
-            }
-
-            require("mason-tool-installer").setup { ensure_installed = ensure_installed }
-
             for name, config in pairs(servers) do
                 if config == true then
                     config = {}
@@ -133,23 +125,27 @@ return {
                     group = vim.api.nvim_create_augroup("CMakeSetup", { clear = true }),
                 })
             end
-
             setup_cmake_compile_commands()
-
             require("conform").setup({
                 formatters_by_ft = {
-                    cpp = {},
+                    cpp = {"clang-format"},
+                    c = {"clang-format"},
+                },
+                formatters={
+                    clang_format={
+                        prepend_args={ "--style={UseTab: Always, IndentWidth: 4}" }
+                    },
                 }
             })
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                callback = function(args)
-                    require("conform").format {
-                        bufnr = args.buf,
-                        lsp_fallback = true,
-                        quiet = true,
-                    }
-                end,
-            })
+            --vim.api.nvim_create_autocmd("BufWritePre", {
+            --    callback = function(args)
+            --        require("conform").format {
+            --            bufnr = args.buf,
+            --            lsp_fallback = false,
+            --            quiet = true,
+            --        }
+            --    end,
+            --})
         end,
     },
 }
