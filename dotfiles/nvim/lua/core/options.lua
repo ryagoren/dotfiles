@@ -33,7 +33,7 @@ opt.shortmess = "A"
 
 opt.listchars = {
     space = '·',
-    tab = '^',
+    tab = '^ ',
     trail = '•',
     extends = '»',
     precedes = '«',
