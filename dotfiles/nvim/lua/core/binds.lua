@@ -29,6 +29,9 @@ set('n', '*', '*zz', { silent = true })
 set('n', '#', '#zz', { silent = true })
 set('n', 'g*', 'g*zz', { silent = true })
 
-set('n', '<leader>z', ':set invlist<CR>')
-
---set( 'n', '<Leader>d', ':lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+set('n', '<leader>il', ':set invlist<CR>')
+set('n', '<leader>te', function()
+    local current_expandtab = vim.bo.expandtab
+    vim.bo.expandtab = not current_expandtab
+    print("expandtab is now " .. (vim.bo.expandtab and "on" or "off"))
+end, { noremap = true, silent = false, desc = "toggle expandtab" })

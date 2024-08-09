@@ -8,6 +8,7 @@ opt.undofile = true
 
 opt.splitbelow = true
 opt.splitright = true
+
 --opt.signcolumn = "yes"
 opt.shada = { "'10", "<0", "s10", "h" }
 
@@ -29,8 +30,8 @@ opt.vb = true
 opt.diffopt:append('iwhite')
 opt.diffopt:append('algorithm:histogram')
 opt.diffopt:append('indent-heuristic')
-opt.shortmess = "A"
 
+opt.shortmess = "A"
 opt.listchars = {
     space = '·',
     tab = '^ ',

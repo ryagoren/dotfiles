@@ -136,6 +136,7 @@ keybinds {
         unbind "Ctrl h"
         unbind "Ctrl H"
         bind "Alt n" { NewPane "Right"; }
+        bind "Alt N" { NewPane "Down"; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt j" "Alt Down" { MoveFocus "Down"; }
@@ -145,6 +146,8 @@ keybinds {
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "Alt r" { MovePane; }
+        bind "Alt R" { MovePaneBackwards; }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
@@ -214,7 +217,7 @@ themes {
         // fg 192 202 245 // #c0caf5
         fg 230 217 184
         bg 37 26 52 // #251a34
-        black 0 0 0 // #000000
+        black 37 26 52                      // 0 0 0 // #000000
         red 219 75 75 // #db4b4b
         green 255 207 232 // #ffcfe8 ( used for floating border and tab selection)
         yellow 224 175 104 // #e0af68
