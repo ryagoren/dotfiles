@@ -24,3 +24,4 @@ require("lazy").setup({ import = "plugins" }, {
 require("core.binds")
 require("core.options")
 require("core.commands")
+require("core.aucommands")
