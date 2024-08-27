@@ -54,7 +54,7 @@ nontext="$lv"
 hostuser="$lpk"
 ppath="$pty"
 gbranch="$vlv"
-export PS1="$nontext┌─[$hostuser\u$nontext@$hostuser\h$nontext:$ppath\w$nontext]$gbranch\$(parse_git_branch)$nontext \n└─╼ $white"
+export PS1="$hostuser\u$nontext@$hostuser\h$nontext:$ppath\w$gbranch\$(parse_git_branch)"$nontext" $white"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -127,7 +127,6 @@ if [[ -z "$ZELLIJ" ]]; then
     else
         zellij
     fi
-
     if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
         exit
     fi
