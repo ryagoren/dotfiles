@@ -6,13 +6,83 @@ local f = ls.function_node
 local c = ls.choice_node
 
 local snippets = {
+	s("clongopts", {
+		t({
+			"struct option long_options[] = {",
+			"\t{\"help\", no_argument, 0, 'h'},",
+			"\t{\"input\", required_argument, 0, 'i'},",
+			"\t{\"output\", required_argument, 0, 'o'},",
+			"\t{0, 0, 0, 0}",
+			"};",
+			"",
+			"int parse_opts(int argc, char **argv) {",
+			"\tint option_index = 0;",
+			"\tint c;",
+			"",
+			"\twhile ((c = getopt_long(argc, argv, \"hi:o:\", long_options, &option_index)) != -1) {",
+			"\t\tswitch (c) {",
+			"\t\tcase 'h':",
+			"\t\t\tprintf(\"Usage: %s [options]\\n\", argv[0]);",
+			"\t\t\tprintf(\"Options:\\n\");",
+			"\t\t\tprintf(\"  -h, --help\\t\\tShow this help message\\n\");",
+			"\t\t\tprintf(\"  -i, --input FILE\\tSpecify input file\\n\");",
+			"\t\t\tprintf(\"  -o, --output FILE\\tSpecify output file\\n\");",
+			"\t\t\treturn 0;",
+			"\t\tcase 'i':",
+			"\t\t\tprintf(\"Input file: %s\\n\", optarg);",
+			"\t\t\tbreak;",
+			"\t\tcase 'o':",
+			"\t\t\tprintf(\"Output file: %s\\n\", optarg);",
+			"\t\t\tbreak;",
+			"\t\tcase '?':",
+			"\t\t\t// getopt_long already printed an error message",
+			"\t\t\treturn 1;",
+			"\t\tdefault:",
+			"\t\t\tabort();",
+			"\t\t}",
+			"\t}",
+			"",
+			"\tif (optind < argc) {",
+			"\t\tprintf(\"non-option ARGV-elements: \");",
+			"\t\twhile (optind < argc)",
+			"\t\t\tprintf(\"%s \", argv[optind++]);",
+			"\t\tprintf(\"\\n\");",
+			"\t}",
+			"",
+			"\treturn 0;",
+			"}"
+		})
+	}),
+
+	s("cmainlong", {
+		t({
+			"#include <stdio.h>",
+			"#include <stdlib.h>",
+			"#include <getopt.h>",
+			"",
+			"int parse_opts(int argc, char **argv);",
+			"",
+			"int main(int argc, char **argv) {",
+			"\tint result = parse_opts(argc, argv);",
+			"\tif (result != 0) {",
+			"\t\treturn result;",
+			"\t}",
+			"",
+			"\t// code sth you animal",
+			"\tprintf(\"Main running for `%s`...\\n\", *argv);",
+			"",
+			"\treturn 0;",
+			"}"
+		})
+	}),
+
 	s("cmain", {
 		t({
 			"#include <stdio.h>",
 			"#include <stdlib.h>",
 			"#include <unistd.h>",
 			"",
-			"int main(int argc, char *argv[]) {",
+			"int main(int argc, char **argv) {",
 			"\tint opt;",
 			"\tchar *ifile = NULL;",
 			"\tchar *ofile = NULL;",
@@ -33,7 +103,6 @@ local snippets = {
 			"\t\t}",
 			"\t}",
 			"",
-			"\t// Your code here",
 			"\tif (ifile) printf(\"Input file: %s\\n\", ifile);",
 			"\tif (ofile) printf(\"Output file: %s\\n\", ofile);",
 			"",
@@ -57,7 +126,6 @@ local snippets = {
 		"ssize_t read;",
 		"",
 		"while ((read = getline(&line, &len, fp)) != -1) {",
-		"\t// process line",
 		"\t"}),
 		i(2, "printf(\"%s\", line);"),
 		t({"",
@@ -86,6 +154,5 @@ local snippets = {
 		"\t} while (0)"}),
 	}),
 }
-print("C snippets table created with", #snippets, "snippets")
 return snippets
 
