@@ -7,7 +7,6 @@ return {
 			local ls=require "luasnip"
 			local snippet_path = "/lua/snippets/"
 			local snippet_files = vim.api.nvim_get_runtime_file(snippet_path .. "*.lua", true)
-			print("Found snippet files:", vim.inspect(snippet_files))
 			for _, fpath in ipairs(snippet_files) do
 				local filename = vim.fn.fnamemodify(fpath, ":t:r")
 				local chunk = loadfile(fpath)

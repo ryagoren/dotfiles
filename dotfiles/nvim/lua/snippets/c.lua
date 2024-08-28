@@ -153,6 +153,32 @@ local snippets = {
 		"\t\t} \\",
 		"\t} while (0)"}),
 	}),
+
+	s("calloc_safe", {
+		i(1, "int"),
+		t(" *"),
+		i(2, "arr"),
+		t(" = calloc("),
+		i(3, "num_elements"),
+		t(", sizeof("),
+		f(function(args) return args[1][1] end, {1}),
+		t({"));",
+		"if ("}),
+		f(function(args) return args[1][1] end, {2}),
+		t({" == NULL) {",
+		"\tfprintf(stderr, \"Memory allocation failed\\n\");",
+		"\treturn EXIT_FAILURE;",
+		"}"}),
+	}),
+
+	s("salloc", {
+		t({"void *ptr = calloc("}), i(1, "num_elements"), t({", sizeof("}), i(2, "type"), t({"));",
+		"if (ptr == NULL) {",
+		"\tfprintf(stderr, \"failed to alloc\\n\");",
+		"\texit(EXIT_FAILURE);",
+		"}"}),
+	}),
+
 }
 return snippets
 
