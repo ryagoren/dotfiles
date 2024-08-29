@@ -28,8 +28,8 @@ pty='\[\e[38;2;251;236;193m\]'
 
 # light lav
 lv='\[\e[38;2;230;230;250m\]'
-vlv='\[\e[38;2;180;160;255m\]' # good 
-elv='\[\e[38;2;191;119;246m\]' 
+vlv='\[\e[38;2;180;160;255m\]' # good
+elv='\[\e[38;2;191;119;246m\]'
 rlv='\[\e[38;2;177;102;255m\]'
 nlv='\[\e[38;2;177;102;255m\]'
 
@@ -73,7 +73,6 @@ alias xcsc="xclip -selection clipboard"
 alias polyconfig="nvim ~/.config/polybar/config.ini"
 alias piconfig="nvim ~/.config/picom/picom.conf"
 alias alconfig="nvim ~/.config/alacritty/alacritty.toml"
-alias kitconfig="nvim ~/.config/kitty/kitty.conf"
 alias wezconfig="nvim ~/.config/wezterm/wezterm.lua"
 
 alias pss="ps -u --sort=start_time"

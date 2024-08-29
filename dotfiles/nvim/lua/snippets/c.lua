@@ -136,8 +136,6 @@ local snippets = {
 		"\tfree(line);"}),
 	}),
 
-
-	-- err maco
 	s("cerr", {
 		t({"#define ERROR_CHECK(condition, message) \\",
 		"\tdo { \\",

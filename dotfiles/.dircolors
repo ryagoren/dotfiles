@@ -40,15 +40,15 @@ TERM vt100
 TERM xterm*
 
 # red: 00;38;02;255;154;239
-# deep/base blue: 00;38;02;110;162;247 
+# deep/base blue: 00;38;02;110;162;247
 # cyan: 00;38;02;255;137;09
 
 #lv='\[\e[38;2;230;230;250m\]'
-# light_violet(main neut color) 
+# light_violet(main neut color)
 #NORMAL 00;38;02;230;250
 
 #NORMAL 00 # no color code at all
-FILE 00;38;2;230;230;250 
+FILE 00;38;2;230;230;250
 RESET 0 # reset to "normal" color
 
 DIR 01;38;2;122;162;247 # Bold Blue for directories (#7AA2F7)
@@ -56,9 +56,9 @@ LINK 01;38;2;125;207;255 # Bold Light Blue for symlinks (#7DCFFF)
 EXEC 01;38;2;158;206;106 # Bold Green for executables (#9ECE6A)
 
 # Compilable source files
-.c 00;38;2;122;162;247 # Blue for C files (#7AA2F7)
-.cpp 00;38;2;122;162;247 # Blue for C++ files (#7AA2F7)
-.rs 00;38;2;255;158;100 # Orange for Rust files (#FF9E64)
+.c 00;38;2;255;158;100 # orange
+.cpp 00;38;2;255;158;100 # Orange
+.rs 00;38;2;255;158;100 # Orange
 
 # Script files
 .sh 00;38;2;115;218;202 # Light Green for shell scripts (#73DACA)
