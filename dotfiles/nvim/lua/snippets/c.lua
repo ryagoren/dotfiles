@@ -111,7 +111,6 @@ local snippets = {
 		})
 	}),
 
-	-- read a file into mem
 	s("creadfile", {
 		t({"FILE *fp = fopen("}),
 		i(1, "filename"),
@@ -177,6 +176,18 @@ local snippets = {
 		"}"}),
 	}),
 
+	s("cfgets", {
+		t({"char buffer[1024];", ""}),
+		t({"while (fgets(buffer, sizeof(buffer), stdin) != NULL) {", "    "}),
+		i(1, "int value"),
+		t({";", "    if (sscanf(buffer, \""}),
+		i(2, "%d"),
+		t({"\", &"}),
+		i(3, "value"),
+		t({") == 1) {", "        // Process the input", "        "}),
+		i(4, "printf(\"Processed value: %d\\n\", value);"),
+		t({"", "    } else {", "        fprintf(stderr, \"Invalid input\\n\");", "    }", "}"}),
+	})
 }
 return snippets
 
