@@ -76,6 +76,7 @@ alias alconfig="nvim ~/.config/alacritty/alacritty.toml"
 alias kitconfig="nvim ~/.config/kitty/kitty.conf"
 alias wezconfig="nvim ~/.config/wezterm/wezterm.lua"
 
+alias pss="ps -u --sort=start_time"
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -102,10 +103,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export PATH=$PATH:~/local/bin:~/.cargo/bin
 export EDITOR='nvim'
 export QMK_HOME=/home/ryangeor/git/qmk_parent/qmk
-
+export CBIN_DIR="$HOME/local/cbin"
+export PATH=$PATH:~/local/bin:~/.cargo/bin:~/local/cbin
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
