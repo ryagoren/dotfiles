@@ -58,6 +58,10 @@ return {
 		t({'else', ''}),
 		t({'    echo "This script is being sourced"', ''}),
 		t({'fi'})
-	})
-
+	}),
+	s("counter", {
+		t({"for i in ${!arr[@]}; do", ''}),
+		t({"echo $i \"${arr[i]}\""}, ''),
+		t({"done"}, ''),
+	}),
 }

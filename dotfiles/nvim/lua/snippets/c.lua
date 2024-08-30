@@ -187,7 +187,25 @@ local snippets = {
 		t({") == 1) {", "        // Process the input", "        "}),
 		i(4, "printf(\"Processed value: %d\\n\", value);"),
 		t({"", "    } else {", "        fprintf(stderr, \"Invalid input\\n\");", "    }", "}"}),
-	})
+	}),
+
+	s("cenv", {
+		t("char *"),
+		i(1, "verbose"),
+		t(" = getenv(\""),
+		i(2, "LDRV"),
+		t("\");"),
+		t({"", "if ("}),
+		f(function(args) return args[1][1] end, {1}),
+		t(" && strcmp("),
+		f(function(args) return args[1][1] end, {1}),
+		t(", \"1\") == 0)"),
+		t({"", "    *flags |= "}),
+		i(3, "VERBOSE"),
+		t(";"),
+	}),
+
 }
+
 return snippets
 
