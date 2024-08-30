@@ -43,11 +43,9 @@ return {
 			end
 
 			vim.snippet.stop = ls.unlink_current
-
 			ls.config.set_config {
 				history=true,
-				updateevents="TextChanged,TextChangedI",
-				override_builtin=true,
+				enable_autosnippets=false,
 			}
 
 			vim.keymap.set({"i", "s"}, "<C-i>", function()
@@ -77,6 +75,10 @@ return {
 					print("available snippets:", vim.inspect(snippets))
 				end
 			end, {nargs = 1})
+
+			-- why would a plugin make this so annoying lol
+			vim.keymap.set({"i", "s"}, "<Tab>", "<Tab>", {silent = true, noremap = true})
+			vim.keymap.set({"i", "s"}, "<S-Tab>", "<S-Tab>", {silent = true, noremap = true})
 
 		end
 
