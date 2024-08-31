@@ -24,7 +24,7 @@ return {
 				enable_autosnippets=false,
 			}
 
-			vim.keymap.set({"i", "s"}, "<C-i>", function()
+			vim.keymap.set({"i"}, "<C-x>", function()
 				if ls.expand_or_jumpable() then
 					ls.expand_or_jump()
 				end
@@ -41,9 +41,28 @@ return {
 				end
 			end, {nargs = 1})
 
-			vim.keymap.set({"i", "s"}, "<Tab>", "<Tab>", {silent = true, noremap = true})
-			vim.keymap.set({"i", "s"}, "<S-Tab>", "<S-Tab>", {silent = true, noremap = true})
+			vim.api.nvim_create_user_command("ListSnippets", function()
+				local available_snippets = {}
+				for ft, snippets in pairs(ls.get_snippets()) do
+					if not available_snippets[ft] then
+						available_snippets[ft] = {}
+					end
+					for _, snippet in pairs(snippets) do
+						table.insert(available_snippets[ft], snippet.name)
+					end
+				end
 
+				for ft, names in pairs(available_snippets) do
+					print("Snippets for filetype '" .. ft .. "':")
+					for _, name in ipairs(names) do
+						print("  - " .. name)
+						vim.keymap.set({"i", "s"}, "<Tab>", "<Tab>", {silent = true, noremap = true})
+						vim.keymap.set({"i", "s"}, "<S-Tab>", "<S-Tab>", {silent = true, noremap = true})
+					end
+					print("")
+				end
+			end, {})
+			vim.keymap.set({"n"}, "<leader>ls", ":ListSnippets<CR>")
 		end
 
 	}
