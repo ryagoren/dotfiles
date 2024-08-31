@@ -98,54 +98,25 @@ return {
 
             local function setup_cmake_compile_commands()
                 local function on_vim_enter()
-                    -- Check if we're in a CMake project
                     if vim.fn.filereadable('CMakeLists.txt') == 1 then
-                        local build_dir = 'build' -- Adjust this to your preferred build directory name
-
-                        -- Create build directory if it doesn't exist
+                        local build_dir = 'build'
                         if vim.fn.isdirectory(build_dir) == 0 then
                             vim.fn.mkdir(build_dir, 'p')
                         end
-
-                        -- Check if compile_commands.json exists in the build directory
                         if vim.fn.filereadable(build_dir .. '/compile_commands.json') == 0 then
-                            -- Run CMake to generate compile_commands.json
                             vim.fn.system('cmake -S . -B ' .. build_dir)
                         end
-
-                        -- Symlink compile_commands.json to the project root if it's not already there
                         if vim.fn.filereadable('compile_commands.json') == 0 then
                             vim.fn.system('ln -s ' .. build_dir .. '/compile_commands.json compile_commands.json')
                         end
                     end
                 end
-
                 vim.api.nvim_create_autocmd("VimEnter", {
                     callback = on_vim_enter,
                     group = vim.api.nvim_create_augroup("CMakeSetup", { clear = true }),
                 })
             end
             setup_cmake_compile_commands()
-            require("conform").setup({
-                formatters_by_ft = {
-                    cpp = {"clang-format"},
-                    c = {"clang-format"},
-                },
-                formatters={
-                    clang_format={
-                        prepend_args={ "--style={UseTab: Always, IndentWidth: 4}" }
-                    },
-                }
-            })
-            --vim.api.nvim_create_autocmd("BufWritePre", {
-            --    callback = function(args)
-            --        require("conform").format {
-            --            bufnr = args.buf,
-            --            lsp_fallback = false,
-            --            quiet = true,
-            --        }
-            --    end,
-            --})
         end,
     },
 }

@@ -19,30 +19,6 @@ return {
 				loadfile(fpath)()
 			end
 
-			---@diagnostic disable-next-line: duplicate-set-field
-			vim.snippet.active=function(filter)
-				filter = filter or {}
-				if filter.direction == 1 then
-					return ls.expand_or_jumpable
-				else
-					return ls.jumpable(filter.direction)
-				end
-			end
-
-			---@diagnostic disable-next-line: duplicate-set-field
-			vim.snippet.jump = function(direction)
-				if direction == 1 then
-					if ls.expandable() then
-						return ls.expand_or_jump()
-					else
-						return ls.jumpable(1) and ls.jump(1)
-					end
-				else
-					return ls.jumpable(-1) and ls.jump(-1)
-				end
-			end
-
-			vim.snippet.stop = ls.unlink_current
 			ls.config.set_config {
 				history=true,
 				enable_autosnippets=false,
@@ -54,17 +30,6 @@ return {
 				end
 			end, {silent = true})
 
-			vim.keymap.set({"i", "s"}, "<C-k>", function()
-				if ls.jumpable(-1) then
-					ls.jump(-1)
-				end
-			end, {silent = true})
-
-			vim.keymap.set("i", "<C-l>", function()
-				if ls.choice_active() then
-					ls.change_choice(1)
-				end
-			end)
 			vim.api.nvim_create_user_command("ExpandSnippet", function(opts)
 				local snip_name = opts.args
 				local snippets = ls.get_snippets("c")
@@ -76,7 +41,6 @@ return {
 				end
 			end, {nargs = 1})
 
-			-- why would a plugin make this so annoying lol
 			vim.keymap.set({"i", "s"}, "<Tab>", "<Tab>", {silent = true, noremap = true})
 			vim.keymap.set({"i", "s"}, "<S-Tab>", "<S-Tab>", {silent = true, noremap = true})
 
