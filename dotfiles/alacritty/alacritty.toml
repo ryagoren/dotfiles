@@ -27,7 +27,7 @@ text='#251a34'
 cursor='#fdfdaf'
 
 [font]
-size = 10.0
+size = 8.0
 
 [font.bold]
 family = "JetBrainsMono NFM"
