@@ -121,6 +121,13 @@ source ~/git-completion.bash
 
 set -o vi
 
+
+plike() {
+	[[ -z "$1" ]] && { echo "didnt pass an arg bro"; return 1; }
+	ps -aux | rg -i "$(whoami)" | rg "$@"
+}
+
+
 if [[ -z "$ZELLIJ" ]]; then
     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
         zellij attach -c

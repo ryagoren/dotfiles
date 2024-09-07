@@ -44,8 +44,8 @@ return {
                     },
                 },
                 clangd = {
-                    cmd = { "clangd", "--background-index" },
-                    filetypes = { "c", "cpp", "objc", "objcpp" },
+                    cmd = { "clangd", "--background-index", "--enable-config"},
+                    filetypes = { "c", "cpp" },
                     root_dir = function(fname)
                         return lspconfig.util.root_pattern("compile_commands.json", "compile_flags.txt", ".git")(fname) or
                             vim.fn.getcwd()
@@ -76,7 +76,6 @@ return {
                     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
                     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
                     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-
                     vim.keymap.set('n', '<sK>', vim.lsp.buf.signature_help, opts)
                     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
                     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
