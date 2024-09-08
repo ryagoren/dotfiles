@@ -1,9 +1,9 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
     normal {
-    unbind "Ctrl o" 
-    unbind "Ctrl O" 
-    bind "Alt z" { Copy; } 
+    unbind "Ctrl o"
+    unbind "Ctrl O"
+    bind "Alt z" { Copy; }
 	bind "Alt 1" { GoToTab  1; }
 	bind "Alt 2" { GoToTab  2; }
 	bind "Alt 3" { GoToTab  3; }
@@ -211,6 +211,8 @@ default_shell "bash"
 // defaults to the scrollback size. If this number is higher than the scrollback size, it will
 // also default to the scrollback size. This does nothing if `serialize_pane_viewport` is not true.
 // scrollback_lines_to_serialize 10000
+
+sessions_serialization false
 
 themes {
     candy {
