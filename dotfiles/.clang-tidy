@@ -1,0 +1,15 @@
+Checks: >
+  *,
+  -readability-braces-around-statements,
+  -cppcoreguidelines-avoid-goto,
+  -hicpp-braces-around-statements,
+  -bugprone-easily-swappable-parameters
+  -performance-inefficient-vector-operation
+WarningsAsErrors: ''
+HeaderFilterRegex: ''
+FormatStyle: none
+CheckOptions:
+  - key: readability-identifier-length.MinimumVariableNameLength
+    value: 1
+  - key: readability-identifier-length.MinimumParameterNameLength
+    value: 1

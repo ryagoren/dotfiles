@@ -16,10 +16,10 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     callback = cbrace
 })
 
-opt.tabstop = 8
-opt.shiftwidth = 8
-opt.softtabstop = 8
-opt.expandtab = false
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
+opt.expandtab = true
 
 opt.termguicolors=true
 opt.inccommand = "split"

@@ -1,4 +1,3 @@
-
 local function trim_whitespace()
 	local save=vim.fn.winsaveview()
 	vim.cmd([[keeppatterns %s/\s\+$//e]])
@@ -19,10 +18,19 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "c", "cpp", "h", "hpp" },
+  pattern = { "c", "h" },
   callback = function()
     vim.bo.expandtab = false
-    vim.bo.tabstop = 2
-    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 8
+    vim.bo.shiftwidth = 8
+  end
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "cpp", "hpp" },
+  callback = function()
+    vim.bo.expandtab = true
+    vim.bo.tabstop = 8
+    vim.bo.shiftwidth = 8
   end
 })
